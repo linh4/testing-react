@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'actions'
 
-const CommentBox = () => {
+const CommentBox = (props) => {
   const [comment, setComment] = useState('')
 
   const handleChange = (e) => {
@@ -11,7 +11,7 @@ const CommentBox = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    actions.saveComment(comment)
+    props.saveComment(comment)
     setComment('')
   }
 
